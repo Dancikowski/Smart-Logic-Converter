@@ -34,5 +34,5 @@ Usuwanie znaków równoważności oraz implikacji z formuły klasycznego języka
 
 ## UWAGA! Ze względu na zastosowany algorytm, wpisane formuły muszą być opakowane w nawiasy określające kolejność wykonywania poszczególnych przekształceń.
 
-https://dancikowski.github.io/Logic-Project/
+https://dancikowski.github.io/Smart-Logic-Converter/
 
