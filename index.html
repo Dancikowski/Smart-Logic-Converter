@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Logic Converter</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+
+    <script data-main="scripts/script" src="scripts/require.js" defer></script>
+</head>
+
+<body>
+    <span id="title">Logic Converter</span>
+    <p id="subtitle">designed to remove equivalence and implications</p>
+    <div class="container">
+        <div class="buttons">
+            <div class="btns clear">CLEAR</div>
+            <div class="btns go">CHECK</div>
+        </div>
+        <pre class="type"></pre>
+
+    </div>
+
+    <div class="mobileContainer">
+        <div class="form">
+
+            <input type="text" id="fname" name="firstname" placeholder="Your formula.." rows="5">
+
+            <div class="buttons">
+                <div class="btns clear">CLEAR</div>
+                <div class="btns go">CHECK</div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div id="simpleModal" class="modal">
+
+        <div class="modalContent">
+            <div class="modal-header">
+                <p>Quick Tutorial</p> <span class="closeBtn">&times;</span>
+            </div>
+            <div class="modal-intructions">
+
+                <p id="abouTyping">Type a logic formula accordingly with the following rules:</p>
+                <ul>
+                    <li>Use only letter like <b>p</b>, <b>r</b> and <b>q</b> as a variables</li>
+                    <li>Press <img src="style/img/implication.png" height="20"> to type ⇒</li>
+                    <li>Press <img src="style/img/equivalence.png" height="20"> to type ⇔</li>
+                    <li>Press <img src="style/img/negation.png" height="20"> to type ~</li>
+                    <li>Press <img src="style/img/alternative.png" height="20"> to type ∨ </li>
+                    <li>Press <img src="style/img/conjunction.png" height="20"> to type ∧ </li>
+                    <li>Type left and right bracket normally</li>
+
+                </ul>
+
+                <p>The example formula should look like this <img src="style/img/example.png" height="16"></p>
+                <br>
+                <p>If tour formula is correct click on the <span id="green">green</span> button and get result!</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
