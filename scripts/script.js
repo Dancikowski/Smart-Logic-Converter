@@ -127,25 +127,21 @@ require(['logic'], function (logic) {
             if (checkFormula(formula) && formula != "") {
                 container.querySelector('#error').style.display = "";
                 let yourFormula = formula.split('').map(function (el) {
-                    return el == '>' ? '⇒' : el == '=' ? '⇔' : el;
+                    return el == '>' ? '⇒' : el == '=' ? '⇔' : el == '^' ? '∧' : el == 'v' ? '∨' : el;
                 }).join('');
 
                 container.querySelector('.yourFormula pre').textContent = yourFormula;
-                let result = logic.convertFormula(formula);
+                let result = logic.convertFormula(formula).split('').map(function (el) {
+                    return el == '>' ? '⇒' : el == '=' ? '⇔' : el == '^' ? '∧' : el == 'v' ? '∨' : el;
+                }).join('');
                 container.querySelector('.result pre').textContent = result;
                 container.querySelector('.formulas').style.display = "block";
             } else {
 
                 container.querySelector('#error').style.display = "block";
-
             }
 
-
-
         })
-
-
-
 
     }
 
