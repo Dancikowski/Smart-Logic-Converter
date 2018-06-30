@@ -49,15 +49,15 @@ require(['logic'], function (logic) {
 
     }
     const checkFormula = function (t) {
-        console.log(t);
+
         var bool = true;
-        const rege = new RegExp('>|=')
-        const brackets = /\(|\)/gi;
-        const symbols = ['(', ')', '~', 'p', 'q', 'r', '>', '=', '∨', '∧'];
+        let duplicate = 0;
+        const arrayOfSymbolsInput = ['p', 'q', 'r', '>', '<', '~', '^', 'v', '(', ')', '='];
 
         [].forEach.call(t, function (ele) {
 
-            if (symbols.indexOf(ele) == -1) bool = false;
+            if (arrayOfSymbolsInput.indexOf(ele) == -1) bool = false;
+
         })
 
 
@@ -101,7 +101,7 @@ require(['logic'], function (logic) {
             }).join('');
 
 
-            if (!checkFormula(formula) || !initialCheck(formula)) {
+            if (!initialCheck(formula)) {
                 stack = [];
                 text.style.color = '#e05454';
                 text.textContent = 'Invalid Syntax!';
@@ -120,16 +120,27 @@ require(['logic'], function (logic) {
 
 
         container.querySelector('.go').addEventListener('click', function () {
-            let formula = container.querySelector('#formula').value;
-            let yourFormula = formula.split('').map(function (el) {
-                return el == '>' ? '⇒' : el == '=' ? '⇔' : el;
-            }).join('');
 
-            container.querySelector('.yourFormula pre').textContent = yourFormula;
-            let result = logic.convertFormula(formula);
-            container.querySelector('.result pre').textContent = result;
-            container.querySelector('.result').style.display = "block";
-            container.querySelector('.yourFormula').style.display = "block";
+            container.querySelector('.formulas').style.display = "none";
+            container.querySelector('#error').style.display = "none";
+            let formula = container.querySelector('#formula').value;
+            if (checkFormula(formula) && formula != "") {
+                container.querySelector('#error').style.display = "";
+                let yourFormula = formula.split('').map(function (el) {
+                    return el == '>' ? '⇒' : el == '=' ? '⇔' : el;
+                }).join('');
+
+                container.querySelector('.yourFormula pre').textContent = yourFormula;
+                let result = logic.convertFormula(formula);
+                container.querySelector('.result pre').textContent = result;
+                container.querySelector('.formulas').style.display = "block";
+            } else {
+
+                container.querySelector('#error').style.display = "block";
+
+            }
+
+
 
         })
 
