@@ -6,9 +6,9 @@
     <title>Logic Converter</title>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
     <script data-main="scripts/script" src="scripts/require.js" defer></script>
 </head>
 
@@ -36,11 +36,15 @@
 
 
         </div>
-        <div class="yourFormula">Your formula:
-            <pre></pre>
-        </div>
-        <div class="result">Result:
-            <pre></pre>
+        <p id="error">Invalid Syntax!</p>
+        <div class="formulas">
+
+            <div class="yourFormula">Your formula:
+                <pre></pre>
+            </div>
+            <div class="result">Result:
+                <pre></pre>
+            </div>
         </div>
     </div>
 
@@ -69,7 +73,7 @@
                 <p>If tour formula is correct click on the <span id="green">green</span> button and get result!</p>
 
             </div>
-            <input type="text" id="formula" name="formula" placeholder="Your formula.." rows="5" />
+
 
         </div>
     </div>
