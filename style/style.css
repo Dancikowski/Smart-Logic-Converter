@@ -1,7 +1,7 @@
 body {
     background-color: #dbdbdb;
     height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,6 +22,10 @@ body {
 }
 
 .mobileContainer {
+    display: none;
+}
+
+input[type=text] {
     display: none;
 }
 
@@ -211,6 +215,8 @@ li {
 
 }
 
+
+
 @media (max-width:500px) {
     body {
 
@@ -231,10 +237,10 @@ li {
 
     input[type=text] {
         width: 100%;
-        padding: 22px 20px;
+        padding: 32px 20px;
         margin: 8px 0;
         display: inline-block;
-        font-size: 15px;
+
         box-sizing: border-box;
         border-radius: 10px;
         border: 10px solid #3b3b3b;
@@ -289,15 +295,24 @@ li {
     .result {
         margin-top: 10px;
         text-align: center;
-        display: none;
+
     }
 
     .yourFormula {
         margin-top: 10px;
         text-align: center;
-        display: none;
-    }
 
+    }
+    
+    #error {
+    text-align: center;
+    color: #e84747;
+    display: none;
+}
+
+.formulas {
+    display: none;
+}
 
 }
 
