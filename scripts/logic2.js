@@ -50,30 +50,30 @@ define('logic', ['script'], function () {
             var copyForm = form;
             for (let i = 0; i < tab.length - 1; i++) {
                 var licznik = 0;
-                console.log(form[tab[i].index + licznik]);
+              
                 if (tab[i].symbol == '>' && form.slice(tab[i].index + licznik, tab[i + 1].index + licznik).search(regBrac) != -1) continue;
                 else {
                     var a = "";
                     if (form[tab[i].index - 1 + licznik].search(reg2) != -1) {
 
                         a = form[tab[i].index - 1 + licznik];
-                        console.log(a + " a");
+                      
                         if (form[tab[i].index - 2 + licznik] == '~') {
                             a = form.slice(tab[i].index - 2 + licznik, tab[i].index + licznik);
-                            console.log(a);
+                         
                         }
                     } else {
 
                         let indexRight = countRight(form, tab[i].index + licznik);
 
                         a = form[indexRight - 1] == '~' ? indexRight - 1 : indexRight;
-                        console.log(a);
+                      
                     }
 
                     var b = "";
                     if (form[tab[i].index + 1 + licznik].search(reg2) != -1) {
                         b = tab[i].index + 1 + licznik;
-                        console.log(form[b] + ' b');
+
 
 
                     } else b = tab[i].index + 2 + licznik;
@@ -82,7 +82,7 @@ define('logic', ['script'], function () {
                     form.splice(a, 0, '(');
                     form.splice(b + 2, 0, ')');
                     form = form.join('');
-                    console.log(form);
+                 
 
                     licznik = licznik + 2;
 
@@ -201,7 +201,7 @@ define('logic', ['script'], function () {
 
                         } else {
                             let indexRight = countRight(form, i);
-                            console.log(indexRight);
+                          
                             a = form.substring(indexRight, i + 1);
 
                         }
@@ -229,7 +229,7 @@ define('logic', ['script'], function () {
                         var newPartFormula = "";
                         if (join == '>') {
                             newPartFormula = '~' + a + 'V' + b;
-                            //console.log(newPartFormula);
+                          
                             helper = helper.split('');
                             let firstInd = firstIndexBackwards(form, a, i)
 
@@ -256,7 +256,7 @@ define('logic', ['script'], function () {
                     }
                 }
                 counterLeftBracket++;
-                // console.log(form);
+              
 
             }
 
@@ -268,7 +268,7 @@ define('logic', ['script'], function () {
             let valid = false;
             let left = 0;
             let right = 0;
-            // console.log(x);
+          
             for (let i = 0; i < x.length; i++) {
                 if (x[i] == '(') left++;
                 if (x[i] == ')') right++;
@@ -291,7 +291,7 @@ define('logic', ['script'], function () {
                 if (formula[i].search(reg1) != -1) {
                     if (countBrackets(formula.substring(0, i))) {
                         let a = formula.substring(0, i).length > 2 && formula[0] != '(' ? '(' + formula.substring(0, i) + ')' : formula.substring(0, i);
-                        console.log(a + ' a');
+                       
                         let b = formula.substr(i + 1).length > 2 && formula[i + 1] != '(' ? '(' + formula.substr(i + 1) + ')' : formula.substr(i + 1);
 
                         if (formula[i] == '>') {
@@ -305,7 +305,7 @@ define('logic', ['script'], function () {
                 }
             }
 
-            console.log(formula + " After Main")
+          
             return formula;
         }
 
