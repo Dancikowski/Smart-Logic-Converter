@@ -68,11 +68,11 @@ require(['logic'], function (logic) {
     const text = document.querySelector('.type');
     let stack = [];
     const container = document.querySelector('.mobileContainer');
-    console.log(window.innerWidth);
+   
     if (window.innerWidth > 500) {
         document.addEventListener('keydown', function (el) {
             text.style.color = '3b3b3b';
-            console.log(el.keyCode);
+          
             if (el.keyCode != 13) {
                 if (el.keyCode != 16) {
                     if (arrayOfSymbolKeys.indexOf(el.keyCode) != -1) {
@@ -81,7 +81,7 @@ require(['logic'], function (logic) {
                         stack.push(a);
 
                         text.textContent = stack.join('');
-                        console.log(stack);
+                       
                     } else if (el.keyCode == 8) {
                         text.style.color = '';
                         el.preventDefault();
