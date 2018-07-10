@@ -145,7 +145,7 @@ define('logic', ['script'], function () {
 
                         var newPartFormula = "";
                         if (join == '>') {
-                            newPartFormula = '~' + a + 'V' + b;
+                            newPartFormula = '~' + a + '∨' + b;
                             helper = helper.split('');
                             let firstInd = firstIndexBackwards(form, a, i)
                             helper.splice(form.indexOf(a, firstInd), a.length + b.length + 1, newPartFormula);
